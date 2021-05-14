@@ -1,7 +1,7 @@
 <!-- #include file= "header.asp" -->
     <%
         Response.Write("<i>")
-        Call isSeven(9)
+        Call isSeven(7)
         Response.Write("</i>")
         Response.Write("<br />")
         Response.Write("<b>" & profitableGamble(0.9, 3, 2) & "</b>")
