@@ -1,19 +1,28 @@
 <!-- #include file= "header.asp" -->
     <%
-        ' Call FreeCoffeeCups(213)
-        Response.Write(ReturnSomething("Bonie"))
+        Response.Write("<i>")
+        Call isSeven(9)
+        Response.Write("</i>")
+        Response.Write("<br />")
+        Response.Write("<b>" & profitableGamble(0.9, 3, 2) & "</b>")
+
+        Sub isSeven(num)
+            if num = 7 then
+                Response.Write(true)
+            else
+                Response.Write(false)
+            end if
+        End Sub
+
+        Function profitableGamble(prod, prize, pay)
+            dim sum
+            sum = prod * prize
+            if sum > pay then
+                profitableGamble = true
+            else
+                profitableGamble = false
+            end if
         
-
-        Sub FreeCoffeeCups(cc)
-            dim freeCount 
-            freeCount = cc / 6
-            Response.Write(freeCount + cc)
-        End Sub        
-
-        Function ReturnSomething(something)
-            dim msg
-            msg = "Something"
-            ReturnSomething = msg & " " & something
         End Function
     %>    
 <!-- #include file= "footer.asp" -->    
